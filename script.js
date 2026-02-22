@@ -1,26 +1,23 @@
-function selectSize(button) {
-    document.querySelectorAll(".sizes button")
-        .forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
+function changeImage(element) {
+  document.getElementById("mainImage").src = element.src;
 }
 
 function addToCart() {
-    const btn = document.querySelector(".cta");
-    btn.innerText = "Added ✓";
-    btn.style.background = "#2ecc71";
+  const size = document.getElementById("size").value;
+  if (!size) {
+    alert("Please select a size first!");
+  } else {
+    alert("Added to cart successfully!");
+  }
 }
 
-/* Scroll Reveal */
-window.addEventListener("scroll", function() {
-    const reveals = document.querySelectorAll(".reveal");
+function toggleWishlist() {
+  const btn = document.querySelector(".wishlist");
+  btn.textContent = btn.textContent === "♡" ? "♥" : "♡";
+}
 
-    reveals.forEach(element => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 100) {
-            element.classList.add("active");
-        }
-    });
-});
-   
+function toggleAccordion(button) {
+  const content = button.nextElementSibling;
+  content.style.display =
+    content.style.display === "block" ? "none" : "block";
+}

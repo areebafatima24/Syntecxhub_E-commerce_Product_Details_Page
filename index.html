@@ -3,51 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vanilla 28 - Premium Fragrance</title>
+<title>Vanilla 28</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="nav">
-    <div class="logo">Velvet Mirage</div>
-    <div class="icons">♡ 🛒</div>
-</header>
-
-<section class="product-container">
-
-    <div class="image-section">
-        <img id="mainImage" src="https://images.unsplash.com/photo-1615634260167-c8cdede054de" />
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="fade-in">Vanilla 28</h1>
+        <p class="fade-in delay">Sweet. Addictive. Warm.</p>
     </div>
+</section>
 
-    <div class="info-section">
-        <h1>Vanilla 28</h1>
-        <p class="subtitle">Sweet • Addictive • Warm</p>
-        <h2>AED 559.00</h2>
+<section class="product-section reveal">
+    <div class="product-container">
 
-        <div class="divider"></div>
+        <div class="image-section">
+            <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
+        </div>
 
-        <div class="selector">
-            <label>Select Size</label>
+        <div class="info-section">
+            <h2>AED 559.00</h2>
+
             <div class="sizes">
                 <button onclick="selectSize(this)">50ml</button>
                 <button onclick="selectSize(this)">100ml</button>
             </div>
-        </div>
 
-        <button class="cta" onclick="addToCart()">Add to Bag</button>
+            <button class="cta" onclick="addToCart()">Add to Bag</button>
 
-        <p class="delivery">Free Shipping • 30 Day Returns</p>
-
-        <div class="description">
-            <p>
-            A sensual blend of rich vanilla orchid, warm brown sugar,
-            and creamy tonka. Designed for layering or wearing alone.
+            <p class="description">
+                A sensual blend of rich vanilla orchid,
+                warm brown sugar and creamy tonka.
+                Designed for layering or wearing alone.
             </p>
         </div>
 
     </div>
+</section>
 
+<section class="story reveal">
+    <h2>The Art of Layering</h2>
+    <p>
+        Crafted with Madagascar vanilla and warm amber woods,
+        Vanilla 28 wraps the skin in a soft, addictive warmth.
+    </p>
 </section>
 
 <script src="script.js"></script>

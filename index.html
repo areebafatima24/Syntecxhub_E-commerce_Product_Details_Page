@@ -3,44 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Sneakers</title>
+<title>Vanilla 28 - Premium Fragrance</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
-    <div class="product">
+<header class="nav">
+    <div class="logo">Velvet Mirage</div>
+    <div class="icons">♡ 🛒</div>
+</header>
 
-        <div class="gallery">
-            <img id="mainImage" src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" />
-            <div class="thumbnails">
-                <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" onclick="changeImage(this)">
-                <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5" onclick="changeImage(this)">
-                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" onclick="changeImage(this)">
+<section class="product-container">
+
+    <div class="image-section">
+        <img id="mainImage" src="https://images.unsplash.com/photo-1615634260167-c8cdede054de" />
+    </div>
+
+    <div class="info-section">
+        <h1>Vanilla 28</h1>
+        <p class="subtitle">Sweet • Addictive • Warm</p>
+        <h2>AED 559.00</h2>
+
+        <div class="divider"></div>
+
+        <div class="selector">
+            <label>Select Size</label>
+            <div class="sizes">
+                <button onclick="selectSize(this)">50ml</button>
+                <button onclick="selectSize(this)">100ml</button>
             </div>
         </div>
 
-        <div class="details">
-            <h1>Minimal Premium Sneakers</h1>
-            <p class="rating">⭐ 4.8 (210 reviews)</p>
-            <h2>$149</h2>
-            <p class="stock">Only 3 left in stock</p>
+        <button class="cta" onclick="addToCart()">Add to Bag</button>
 
-            <div class="sizes">
-                <p>Select Size</p>
-                <button onclick="selectSize(this)">7</button>
-                <button onclick="selectSize(this)">8</button>
-                <button onclick="selectSize(this)">9</button>
-                <button onclick="selectSize(this)">10</button>
-            </div>
+        <p class="delivery">Free Shipping • 30 Day Returns</p>
 
-            <button class="cart-btn" onclick="addToCart()">Add to Cart</button>
-
-            <p class="delivery">Free delivery | 30-day returns</p>
+        <div class="description">
+            <p>
+            A sensual blend of rich vanilla orchid, warm brown sugar,
+            and creamy tonka. Designed for layering or wearing alone.
+            </p>
         </div>
 
     </div>
-</div>
+
+</section>
 
 <script src="script.js"></script>
 </body>

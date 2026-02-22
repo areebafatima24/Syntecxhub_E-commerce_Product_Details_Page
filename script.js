@@ -2,22 +2,34 @@ function changeImage(element) {
   document.getElementById("mainImage").src = element.src;
 }
 
+let cartCount = 0;
+
 function addToCart() {
   const size = document.getElementById("size").value;
+
   if (!size) {
-    alert("Please select a size first!");
-  } else {
-    alert("Added to cart successfully!");
+    showToast("Please select a size.");
+    return;
   }
+
+  cartCount++;
+  document.getElementById("cartCount").innerText = cartCount;
+  document.getElementById("cartCount").style.display = "flex";
+
+  showToast("Added to bag ✨");
 }
 
-function toggleWishlist() {
-  const btn = document.querySelector(".wishlist");
-  btn.textContent = btn.textContent === "♡" ? "♥" : "♡";
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.innerText = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
 }
 
 function toggleAccordion(button) {
   const content = button.nextElementSibling;
-  content.style.display =
-    content.style.display === "block" ? "none" : "block";
+  content.classList.toggle("active");
 }

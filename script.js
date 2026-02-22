@@ -1,35 +1,50 @@
-function changeImage(element) {
-  document.getElementById("mainImage").src = element.src;
+function changeImage(el){
+  document.getElementById("mainImage").src = el.src;
 }
 
-let cartCount = 0;
+let quantity = 1;
 
-function addToCart() {
-  const size = document.getElementById("size").value;
-
-  if (!size) {
-    showToast("Please select a size.");
-    return;
-  }
-
-  cartCount++;
-  document.getElementById("cartCount").innerText = cartCount;
-  document.getElementById("cartCount").style.display = "flex";
-
-  showToast("Added to bag ✨");
+function changeQty(val){
+  quantity += val;
+  if(quantity < 1) quantity = 1;
+  document.getElementById("qty").innerText = quantity;
 }
 
-function showToast(message) {
-  const toast = document.getElementById("toast");
-  toast.innerText = message;
-  toast.classList.add("show");
-
-  setTimeout(() => {
-    toast.classList.remove("show");
-  }, 3000);
+function openCart(){
+  document.getElementById("cartDrawer").classList.add("open");
+  document.querySelector(".overlay").classList.add("active");
 }
 
-function toggleAccordion(button) {
-  const content = button.nextElementSibling;
-  content.classList.toggle("active");
+function closeCart(){
+  document.getElementById("cartDrawer").classList.remove("open");
+  document.querySelector(".overlay").classList.remove("active");
 }
+
+function addToCart(btn){
+  btn.innerText = "Added ✓";
+  btn.style.background = "#4CAF50";
+  setTimeout(()=>{
+    btn.innerText = "Add to Cart";
+    btn.style.background = "";
+  },1500);
+
+  document.getElementById("cartItems").innerHTML =
+  `<p>Vanilla 28 × ${quantity}</p>`;
+
+  openCart();
+}
+
+/* VARIANT ACTIVE SWITCH */
+document.querySelectorAll(".variant").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".variant").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+  });
+});
+
+/* FADE IN ON LOAD */
+window.addEventListener("load",()=>{
+  document.querySelectorAll(".fade-in").forEach(el=>{
+    el.classList.add("show");
+  });
+});

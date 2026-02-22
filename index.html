@@ -1,101 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Velvet Mirage | Vanilla 28</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velvet Mirage | Vanilla 28</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="navbar">
+<nav class="navbar">
   <div class="logo">Velvet Mirage</div>
-  <div class="icons">
-    <span>♡</span>
-    <span>🛒</span>
+  <div class="cart-wrapper">
+    🛒
+    <span id="cartCount" class="cart-count">0</span>
   </div>
-</header>
+</nav>
 
-<main class="container">
+<section class="container fade-in">
 
-  <div class="gallery">
-    <img id="mainImage" src="assets/main.jpg" class="main-image">
-    
-    <div class="thumbnails">
-      <img src="assets/thumb1.jpg" onclick="changeImage(this)">
-      <img src="assets/thumb2.jpg" onclick="changeImage(this)">
-      <img src="assets/thumb3.jpg" onclick="changeImage(this)">
+  <!-- LEFT -->
+  <div class="left">
+    <img id="mainImage" src="images/perfume1.jpg" class="main-img">
+    <div class="thumbs">
+      <img src="images/perfume1.jpg" onclick="changeImage(this)">
+      <img src="images/perfume2.jpg" onclick="changeImage(this)">
+      <img src="images/perfume3.jpg" onclick="changeImage(this)">
     </div>
   </div>
 
-  <div class="details">
-    <h1>VANILLA | 28</h1>
-    <p class="price">AED 559.00</p>
+  <!-- RIGHT -->
+  <div class="right">
+    <h1>Vanilla | 28</h1>
+    <p class="tagline">Warm. Addictive. Sensual.</p>
+    <h2>₹4,999</h2>
 
-    <label>Select Size</label>
     <select id="size">
-      <option value="">Choose size</option>
+      <option value="">Select Size</option>
       <option>50ml</option>
       <option>100ml</option>
     </select>
 
     <button class="add-btn" onclick="addToCart()">Add to Bag</button>
-    <button class="wishlist" onclick="toggleWishlist()">♡</button>
 
     <div class="accordion">
-      <div class="accordion-item">
-        <button onclick="toggleAccordion(this)">How to Use</button>
-        <div class="content">
-          Spray on pulse points for long lasting fragrance.
-        </div>
+      <button onclick="toggleAccordion(this)">Fragrance Notes</button>
+      <div class="content">
+        Vanilla • Brown Sugar • Tonka Bean • Amber
       </div>
 
-      <div class="accordion-item">
-        <button onclick="toggleAccordion(this)">Ingredients</button>
-        <div class="content">
-          Vanilla, Brown Sugar, Tonka Bean, Amber.
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button onclick="toggleAccordion(this)">Shipping</button>
-        <div class="content">
-          Free shipping within 3-5 business days.
-        </div>
+      <button onclick="toggleAccordion(this)">Description</button>
+      <div class="content">
+        A deep, intoxicating fragrance crafted for bold presence.
       </div>
     </div>
-
   </div>
 
-</main>
+</section>
 
 <footer>
   <div class="footer-content">
-    <div>
-      <h3>Velvet Mirage</h3>
-      <p>Timeless fragrances crafted with elegance.</p>
-    </div>
-
-    <div>
-      <h4>Shop</h4>
-      <ul>
-        <li>All Fragrances</li>
-        <li>New Arrivals</li>
-        <li>Gift Sets</li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Support</h4>
-      <ul>
-        <li>Shipping</li>
-        <li>Returns</li>
-        <li>Contact</li>
-      </ul>
-    </div>
+    <h3>Velvet Mirage</h3>
+    <p>Crafting timeless fragrances since 2026.</p>
   </div>
-
   <p class="copyright">© 2026 Velvet Mirage. All rights reserved.</p>
 </footer>
+
+<div id="toast" class="toast"></div>
 
 <script src="script.js"></script>
 </body>
